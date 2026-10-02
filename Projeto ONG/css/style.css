@@ -1,0 +1,1065 @@
+/* =========================================================
+   ONG ESPERANÇA
+   ARQUIVO: style.css
+
+   Este arquivo controla toda a aparência do projeto:
+   cores, fontes, espaçamentos, Grid, Flexbox,
+   responsividade e formulário.
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN SYSTEM
+   =========================================================
+
+   O :root guarda as variáveis CSS do projeto.
+
+   A vantagem é que, se quisermos trocar uma cor ou
+   espaçamento posteriormente, podemos alterar em um
+   único lugar.
+*/
+
+:root {
+
+    /* ---------- CORES ---------- */
+
+    --cor-primaria: #123B5D;
+    --cor-secundaria: #268BC2;
+    --cor-destaque: #F5A623;
+    --cor-sucesso: #2E8B57;
+
+    --cor-fundo: #F3F7FA;
+    --cor-superficie: #FFFFFF;
+
+    --cor-texto: #17324D;
+    --cor-texto-secundario: #526979;
+
+    --cor-borda: #C6D8E5;
+
+
+    /* ---------- TIPOGRAFIA ---------- */
+
+    --fs-sm: 0.875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.75rem;
+    --fs-xxl: 2.5rem;
+
+
+    /* ---------- ESPAÇAMENTOS ---------- */
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+
+    /* ---------- OUTROS ---------- */
+
+    --raio: 12px;
+
+    --sombra:
+        0 8px 24px rgba(18, 59, 93, 0.10);
+}
+
+
+/* =========================================================
+   2. RESET BÁSICO
+   ========================================================= */
+
+/*
+   box-sizing: border-box
+
+   Faz com que padding e border sejam considerados
+   dentro do tamanho definido do elemento.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+   Rolagem suave quando clicamos em links internos.
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*
+   Configurações gerais da página.
+*/
+
+body {
+    margin: 0;
+
+    background-color: var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: var(--fs-md);
+
+    line-height: 1.6;
+}
+
+
+/*
+   Imagens nunca devem ultrapassar o tamanho
+   do elemento que as contém.
+*/
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/*
+   Configuração padrão dos links.
+*/
+
+a {
+    color: var(--cor-secundaria);
+}
+
+
+/* =========================================================
+   3. CONTAINER PRINCIPAL
+   =========================================================
+
+   O container limita a largura do conteúdo.
+
+   Exemplo:
+
+   Tela grande
+   ┌───────────────────────────────┐
+   │                               │
+   │     CONTEÚDO DA PÁGINA        │
+   │                               │
+   └───────────────────────────────┘
+*/
+
+.container {
+    width: min(1200px, 92%);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   4. CSS GRID - 12 COLUNAS
+   =========================================================
+
+   Aqui está o Grid exigido pela atividade.
+
+   A página é dividida em 12 colunas.
+
+   ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
+   │  │  │  │  │  │  │  │  │  │  │  │  │
+   └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘
+
+*/
+
+.grid-12 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, minmax(0, 1fr));
+
+    gap: var(--space-6);
+}
+
+
+/*
+   Essas classes dizem quantas colunas cada elemento
+   irá ocupar.
+*/
+
+.span-12 {
+    grid-column: span 12;
+}
+
+.span-7 {
+    grid-column: span 7;
+}
+
+.span-6 {
+    grid-column: span 6;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+
+/* =========================================================
+   5. CABEÇALHO
+   ========================================================= */
+
+.site-header {
+    background-color: var(--cor-primaria);
+
+    color: white;
+}
+
+
+/*
+   Aqui utilizamos FLEXBOX.
+
+   O Flexbox organiza os elementos em uma dimensão:
+   horizontal ou vertical.
+*/
+
+.header-inner {
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-4);
+}
+
+
+/* Logo + nome */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: var(--fs-lg);
+
+    font-weight: 700;
+}
+
+
+/* Menu */
+
+.main-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-5);
+}
+
+
+/* Links do menu */
+
+.main-nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* Efeito ao passar o mouse */
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+
+    color: #F5D08A;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   6. HERO / ÁREA PRINCIPAL
+   ========================================================= */
+
+.hero {
+
+    padding: var(--space-8) 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #EAF5FB,
+            #F8FBFD
+        );
+}
+
+
+/*
+   Texto ocupa 7 das 12 colunas.
+*/
+
+.hero-content {
+
+    grid-column: span 7;
+}
+
+
+/*
+   Imagem ocupa 5 das 12 colunas.
+*/
+
+.hero-card {
+
+    grid-column: span 5;
+
+    background-color: var(--cor-superficie);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   7. TÍTULOS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+
+    line-height: 1.2;
+
+    margin-top: 0;
+}
+
+
+h1 {
+
+    font-size: var(--fs-xxl);
+
+    margin-bottom: var(--space-5);
+}
+
+
+h2 {
+
+    font-size: var(--fs-xl);
+
+    margin-bottom: var(--space-4);
+}
+
+
+h3 {
+
+    font-size: var(--fs-lg);
+
+    margin-bottom: var(--space-3);
+}
+
+
+/* Pequeno texto de destaque */
+
+.eyebrow {
+
+    margin: 0 0 var(--space-2);
+
+    color: var(--cor-secundaria);
+
+    font-size: var(--fs-sm);
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   8. BOTÕES
+   =========================================================
+
+   Novamente usamos FLEXBOX para organizar
+   os botões lado a lado.
+*/
+
+.button-group {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-3);
+}
+
+
+/*
+   Estilo geral dos botões.
+*/
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 10px 18px;
+
+    border: 2px solid transparent;
+
+    border-radius: 8px;
+
+    font: inherit;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* Botão principal */
+
+.button-primary {
+
+    background-color: var(--cor-secundaria);
+
+    color: white;
+}
+
+
+/* Botão secundário */
+
+.button-secondary {
+
+    background-color: white;
+
+    border-color: var(--cor-secundaria);
+
+    color: var(--cor-primaria);
+}
+
+
+/* =========================================================
+   9. SEÇÕES
+   ========================================================= */
+
+.section {
+
+    padding: var(--space-8) 0;
+}
+
+
+/*
+   Fundo alternativo para algumas seções.
+*/
+
+.section-muted {
+
+    background-color: #EAF1F5;
+}
+
+
+/* =========================================================
+   10. CARDS
+   ========================================================= */
+
+.info-card,
+.project-card,
+.info-panel,
+.list-panel,
+.contact-box {
+
+    background-color: var(--cor-superficie);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+}
+
+
+/*
+   Card simples.
+*/
+
+.info-card {
+
+    padding: var(--space-6);
+}
+
+
+/*
+   Cards dos projetos.
+
+   Também usamos Flexbox aqui.
+
+   Isso permite organizar o conteúdo interno
+   do card de forma vertical.
+*/
+
+.project-card {
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* Imagem do projeto */
+
+.project-card img {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+}
+
+
+/* Conteúdo do card */
+
+.project-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    flex: 1;
+
+    padding: var(--space-6);
+}
+
+
+/*
+   O link fica empurrado para baixo do card.
+
+   margin-top: auto ocupa o espaço disponível.
+*/
+
+.project-content .text-link {
+
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   11. FORMULÁRIO
+   ========================================================= */
+
+.form-container {
+
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+   Cada grupo do formulário possui espaçamento.
+*/
+
+form {
+
+    display: grid;
+
+    gap: var(--space-6);
+}
+
+
+/*
+   FIELDSET agrupa campos relacionados.
+
+   Isso também ajuda na organização semântica
+   e acessibilidade.
+*/
+
+fieldset {
+
+    margin: 0;
+
+    padding: var(--space-6);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: var(--raio);
+
+    background-color: white;
+}
+
+
+/* Título do grupo */
+
+legend {
+
+    padding-left: var(--space-3);
+
+    padding-right: var(--space-3);
+
+    color: var(--cor-primaria);
+
+    font-size: var(--fs-lg);
+
+    font-weight: 800;
+}
+
+
+/*
+   Grid interno do formulário.
+
+   Dois campos por linha.
+*/
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-5);
+}
+
+
+/*
+   Campo que ocupa a linha inteira.
+*/
+
+.field-full {
+
+    grid-column: 1 / -1;
+}
+
+
+/*
+   Organização interna do campo.
+
+   Aqui usamos Flexbox na vertical.
+*/
+
+.form-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+}
+
+
+/* Labels */
+
+label {
+
+    font-weight: 700;
+}
+
+
+/* Inputs */
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #9FB6C7;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    color: var(--cor-texto);
+
+    font: inherit;
+}
+
+
+/*
+   Destaque quando o usuário seleciona o campo.
+*/
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    outline: 3px solid #B9DDF2;
+
+    border-color: var(--cor-secundaria);
+}
+
+
+/*
+   Campo inválido.
+
+   O HTML5 faz a validação automaticamente.
+*/
+
+input:invalid:not(:placeholder-shown) {
+
+    border-color: #B42318;
+}
+
+
+/* Botões do formulário */
+
+.form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: var(--space-3);
+}
+
+
+/* =========================================================
+   12. RODAPÉ
+   ========================================================= */
+
+.site-footer {
+
+    background-color: var(--cor-primaria);
+
+    color: white;
+
+    padding: var(--space-6) 0;
+}
+
+
+/*
+   Flexbox no rodapé.
+*/
+
+.footer-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-4);
+}
+
+
+.footer-inner p {
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   13. RESPONSIVIDADE
+   =========================================================
+
+   Aqui entram os 5 BREAKPOINTS exigidos pelo exercício.
+
+   A ideia é:
+
+   Celular
+       ↓
+   Celular maior
+       ↓
+   Tablet
+       ↓
+   Notebook
+       ↓
+   Desktop
+*/
+
+
+/* =========================================================
+   BREAKPOINT 1
+   320px
+   Celulares pequenos
+   ========================================================= */
+
+@media (min-width: 320px) {
+
+    .container {
+
+        width: 92%;
+    }
+
+
+    /*
+       No celular, os elementos ocupam
+       praticamente toda a largura.
+    */
+
+    .hero-content,
+    .hero-card,
+    .span-7,
+    .span-6,
+    .span-5,
+    .span-4 {
+
+        grid-column: span 12;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 2
+   576px
+   Celulares maiores
+   ========================================================= */
+
+@media (min-width: 576px) {
+
+    .container {
+
+        width: min(94%, 1200px);
+    }
+
+
+    /*
+       Os cards podem começar a ficar
+       lado a lado.
+    */
+
+    .span-6 {
+
+        grid-column: span 6;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 3
+   768px
+   Tablets
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    /*
+       Hero:
+
+       Texto = 7 colunas
+       Imagem = 5 colunas
+    */
+
+    .hero-content {
+
+        grid-column: span 7;
+    }
+
+    .hero-card {
+
+        grid-column: span 5;
+    }
+
+
+    /*
+       Cards de 4 colunas.
+    */
+
+    .span-4 {
+
+        grid-column: span 4;
+    }
+
+
+    .span-7 {
+
+        grid-column: span 7;
+    }
+
+
+    .span-5 {
+
+        grid-column: span 5;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 4
+   992px
+   Notebooks
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+    .container {
+
+        width: min(92%, 1200px);
+    }
+
+
+    /*
+       Aumentamos o título em telas maiores.
+    */
+
+    h1 {
+
+        font-size: 2.75rem;
+    }
+
+
+    /*
+       Mais espaço entre as seções.
+    */
+
+    .section {
+
+        padding-top: 72px;
+
+        padding-bottom: 72px;
+    }
+}
+
+
+/* =========================================================
+   BREAKPOINT 5
+   1200px
+   Desktops
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    /*
+       Agora usamos a largura máxima
+       definida para o projeto.
+    */
+
+    .container {
+
+        width: 1200px;
+    }
+
+
+    /*
+       Mais espaço na área principal.
+    */
+
+    .hero {
+
+        padding-top: 96px;
+
+        padding-bottom: 96px;
+    }
+	
+	/* Link da página atualmente selecionada */
+nav a[aria-current="page"] {
+    font-weight: bold;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+/* Transição suave nos links */
+nav a {
+    transition: color 0.3s ease, border-color 0.3s ease;
+
+}
+
+/* =========================================
+   ESTADOS VISUAIS DOS CAMPOS
+========================================= */
+
+/* Campo preenchido corretamente */
+.campo-sucesso {
+    border: 2px solid #28a745 !important;
+    outline: none;
+}
+
+/* Campo com erro de preenchimento */
+.campo-erro {
+    border: 2px solid #dc3545 !important;
+    outline: none;
+}
+
+/* Mensagem de erro abaixo do campo */
+.mensagem-erro {
+    display: block;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   NOTIFICAÇÕES TOAST
+========================================= */
+
+.toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+
+    padding: 16px 24px;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(-15px);
+
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Notificação de sucesso */
+.toast-sucesso {
+    background-color: #28a745;
+}
+
+/* Notificação de erro */
+.toast-erro {
+    background-color: #dc3545;
+}
+
+/* Estado visível da notificação */
+.toast.toast-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}

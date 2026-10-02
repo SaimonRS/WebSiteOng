@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Colaborador | ONG Esperança</title>
+
+    <!-- CSS do projeto -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- Logo / nome da ONG -->
+
+            <a class="brand" href="index.html">
+
+              
+
+                ONG Esperança
+
+            </a>
+
+
+            <!-- Navegação -->
+
+            <nav
+                class="main-nav"
+                aria-label="Navegação principal"
+            >
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="projetos.html">
+                    Projetos
+                </a>
+
+                <a
+                    href="cadastro.html"
+                    aria-current="page"
+                >
+                    Seja um colaborador
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+        <!-- Introdução -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    Participe
+                </p>
+
+                <h1>
+                    Cadastro de colaborador
+                </h1>
+
+                <p>
+                    Preencha seus dados para participar das ações
+                    da ONG Esperança.
+                    Os campos marcados com
+                    <strong>*</strong>
+                    são obrigatórios.
+                </p>
+
+
+                <!-- Badge -->
+
+                <p>
+
+                    <span class="badge badge-education">
+                        Voluntariado
+                    </span>
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FORMULÁRIO
+             ================================================= -->
+
+        <section class="section section-muted">
+
+            <div class="container form-container">
+
+
+                <!-- Alerta de exemplo -->
+
+                <div
+                    class="alert alert-success"
+                    role="status"
+                >
+
+                    <strong>Importante:</strong>
+                    seus dados serão utilizados apenas
+                    para contato relacionado às ações
+                    da ONG Esperança.
+
+                </div>
+
+
+                <br>
+
+
+                <form id="formCadastro" action="#" method="post">
+
+
+                    <!-- =====================================
+                         DADOS PESSOAIS
+                         ===================================== -->
+
+                    <fieldset>
+
+                        <legend>
+                            Dados pessoais
+                        </legend>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Nome -->
+
+                            <div class="form-field field-full">
+
+                                <label for="nome">
+                                    Nome completo *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    autocomplete="name"
+                                    required
+                                    minlength="3"
+                                    placeholder="Digite seu nome completo"
+                                >
+
+                            </div>
+
+
+
+                            <!-- CPF -->
+
+                            <div class="form-field">
+
+                                <label for="cpf">
+                                    CPF *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cpf"
+                                    name="cpf"
+                                    inputmode="numeric"
+                                    autocomplete="off"
+                                    required
+                                    pattern="[0-9]{3}\[0-9]{3}\[0-9]{3}[0-9]{2}"
+                                    placeholder="000.000.000-00"
+                                    title="Digite o CPF no formato 000.000.000-00"
+                                >
+
+                            </div>
+
+
+
+                            <!-- Data de nascimento -->
+
+                            <div class="form-field">
+
+                                <label for="nascimento">
+                                    Data de nascimento *
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="nascimento"
+                                    name="nascimento"
+                                    autocomplete="bday"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- E-mail -->
+
+                            <div class="form-field">
+
+                                <label for="email">
+                                    E-mail *
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    required
+                                    placeholder="seuemail@exemplo.com"
+                                >
+
+                            </div>
+
+
+
+                            <!-- Telefone -->
+
+                            <div class="form-field">
+
+                                <label for="telefone">
+                                    Telefone *
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    inputmode="tel"
+                                    autocomplete="tel"
+                                    required
+                                    pattern="\([0-9]{2}\) [0-9]{4,5}[0-9]{4}"
+                                    placeholder="(51) 999999999"
+                                    title="Digite o telefone no formato (51) 99999-9999"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =====================================
+                         ENDEREÇO
+                         ===================================== -->
+
+                    <fieldset>
+
+                        <legend>
+                            Endereço
+                        </legend>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- CEP -->
+
+                            <div class="form-field">
+
+                                <label for="cep">
+                                    CEP *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cep"
+                                    name="cep"
+                                    inputmode="numeric"
+                                    autocomplete="postal-code"
+                                    required
+                                    pattern="[0-9]{5}-[0-9]{3}"
+                                    placeholder="00000-000"
+                                    title="Digite o CEP no formato 00000-000"
+                                >
+
+                            </div>
+
+
+
+                            <!-- Cidade -->
+
+                            <div class="form-field">
+
+                                <label for="cidade">
+                                    Cidade *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="cidade"
+                                    name="cidade"
+                                    autocomplete="address-level2"
+                                    required
+                                    placeholder="Digite sua cidade"
+                                >
+
+                            </div>
+
+
+
+                            <!-- Endereço -->
+
+                            <div class="form-field field-full">
+
+                                <label for="endereco">
+                                    Endereço *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="endereco"
+                                    name="endereco"
+                                    autocomplete="street-address"
+                                    required
+                                    placeholder="Rua, avenida..."
+                                >
+
+                            </div>
+
+
+
+                            <!-- Estado -->
+
+                            <div class="form-field">
+
+                                <label for="estado">
+                                    Estado *
+                                </label>
+
+                                <select
+                                    id="estado"
+                                    name="estado"
+                                    autocomplete="address-level1"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione
+                                    </option>
+
+                                    <option value="RS">
+                                        Rio Grande do Sul
+                                    </option>
+
+                                    <option value="SC">
+                                        Santa Catarina
+                                    </option>
+
+                                    <option value="PR">
+                                        Paraná
+                                    </option>
+
+                                    <option value="SP">
+                                        São Paulo
+                                    </option>
+
+                                    <option value="RJ">
+                                        Rio de Janeiro
+                                    </option>
+
+                                    <option value="MG">
+                                        Minas Gerais
+                                    </option>
+
+                                    <option value="BA">
+                                        Bahia
+                                    </option>
+
+                                    <option value="PE">
+                                        Pernambuco
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =====================================
+                         PARTICIPAÇÃO
+                         ===================================== -->
+
+                    <fieldset>
+
+                        <legend>
+                            Participação
+                        </legend>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- Tipo de participação -->
+
+                            <div class="form-field field-full">
+
+                                <label for="participacao">
+                                    Como deseja participar? *
+                                </label>
+
+                                <select
+                                    id="participacao"
+                                    name="participacao"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Selecione uma opção
+                                    </option>
+
+                                    <option value="voluntario">
+                                        Trabalho voluntário
+                                    </option>
+
+                                    <option value="doador">
+                                        Contribuição financeira
+                                    </option>
+
+                                    <option value="ambos">
+                                        Voluntariado e contribuição
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- Mensagem -->
+
+                            <div class="form-field field-full">
+
+                                <label for="mensagem">
+                                    Mensagem
+                                </label>
+
+                                <textarea
+                                    id="mensagem"
+                                    name="mensagem"
+                                    rows="5"
+                                    maxlength="500"
+                                    placeholder="Conte como gostaria de colaborar"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+
+                    <!-- =====================================
+                         BOTÕES
+                         ===================================== -->
+
+                    <div class="form-actions">
+
+                        <button
+                            class="button button-secondary"
+                            type="reset"
+                        >
+                            Limpar
+                        </button>
+
+
+                        <button
+                            class="button button-primary"
+                            type="submit"
+                        >
+                            Enviar cadastro
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <p>
+                &copy; 2026 ONG Esperança.
+                Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT DO MENU
+         ===================================================== -->
+
+    <script type="module" src="../js/script.js"></script>
+
+</body>
+
+</html>
